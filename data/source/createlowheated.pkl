@@ -1,0 +1,28 @@
+amends "./@base.pkl"
+
+recipes {
+  ["basic_burner"] {
+    type = "minecraft:crafting_shaped"
+    key {
+      ["a"] {
+        item =  "create:andesite_alloy"
+      }
+
+      ["="] {
+        item =  "minecraft:brick"
+      }
+
+      ["s"] {
+        item =  "minecraft:smooth_stone"
+      }
+    }
+    pattern {
+      "==="
+      "a a"
+      "sss"
+    }
+    result {
+      item =  "createlowheated:basic_burner"
+    }
+  }
+}

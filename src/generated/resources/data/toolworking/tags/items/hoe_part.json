@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "toolworking:iron_hoe_part",
+    "toolworking:golden_hoe_part",
+    "toolworking:copper_hoe_part",
+    "toolworking:bronze_hoe_part",
+    "toolworking:brass_hoe_part",
+    "toolworking:steel_hoe_part",
+    "toolworking:wooden_hoe_part"
+  ]
+}

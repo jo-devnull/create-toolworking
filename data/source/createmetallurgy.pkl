@@ -1,0 +1,5 @@
+amends "./@base.pkl"
+
+recipes {
+  ["crafting/materials/steel_ingot_from_block"] { type = "notreepunching:empty" }
+}

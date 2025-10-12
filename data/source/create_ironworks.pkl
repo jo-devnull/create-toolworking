@@ -1,0 +1,131 @@
+amends "./@base.pkl"
+
+local materials = new {
+  "copper"
+  "bronze"
+  "brass"
+  "steel"
+}
+
+local tools = new {
+  "axe"
+  "hoe"
+  "shovel"
+  "pickaxe"
+  "sword"
+  "hammer"
+  "paxel"
+}
+
+local toDisable = new {
+  for (material in materials) {
+    for (tool in tools) {
+      List("tools", tool, material).join("/")
+      List("compat", "\(material)_\(tool)").join("/")
+    }
+  }
+
+  "materials/steel/crafting_block_from_ingot"
+}
+
+local SteelRecipe = new {
+  type = "create:mixing"
+  heatRequirement = "heated"
+  ingredients = null
+
+  results {
+    new { item = "overgeared:crude_steel" }
+
+    new {
+      item = "create_ironworks:steel_nugget"
+      count = 2
+    }
+
+    new {
+      item = "minecraft:iron_nugget"
+      chance = 0.8
+    }
+
+    new {
+      item = "create:experience_nugget"
+      chance = 0.95
+    }
+  }
+}
+
+local alloyRecipe = new {
+  type = "create:mixing"
+  heatRequirement = "heated"
+  ingredients {}
+  results {}
+}
+
+recipes {
+  for (recipeId in toDisable) {
+    [recipeId] { type = "notreepunching:empty" }
+  }
+
+  for (coal in List("coal", "charcoal")) {
+    ["materials/alloys/from_crushed/mixing_steel_from_\(coal)"] = (SteelRecipe) {
+      ingredients {
+        ...items("create:crushed_raw_iron", 2)
+        ...items("create_ironworks:\(coal)_dust", 4)
+      }
+    }
+
+    ["materials/alloys/from_ingots/mixing_steel_from_\(coal)"] = (SteelRecipe) {
+      ingredients {
+        ...items("minecraft:iron_ingot", 2)
+        ...items("create_ironworks:\(coal)_dust", 4)
+      }
+    }
+  }
+
+  ["materials/alloys/from_crushed/mixing_bronze"] = (alloyRecipe) {
+    ingredients {
+      new { item = "create:crushed_raw_copper" }
+      new { item = "create_ironworks:crushed_raw_tin" }
+    }
+
+    results {
+      new { item = "create_ironworks:bronze_ingot" }
+      new { item = "create:copper_nugget" chance = 0.5 }
+      new { item = "create_ironworks:tin_nugget" chance = 0.5 }
+      new { item = "create:experience_nugget" chance = 0.75 }
+    }
+  }
+
+  ["materials/alloys/from_ingot/mixing_bronze"] = (alloyRecipe) {
+    ingredients {
+      new { item = "minecraft:copper_ingot" }
+      new { item = "create_ironworks:tin_ingot" }
+    }
+
+    results {
+      new { item = "create_ironworks:bronze_ingot" }
+      new { item = "create:copper_nugget" chance = 0.5 }
+      new { item = "create_ironworks:tin_nugget" chance = 0.5 }
+      new { item = "create:experience_nugget" chance = 0.75 }
+    }
+  }
+
+  ["materials/alloys/from_crushed/mixing_brass"] = (alloyRecipe) {
+    ingredients {
+      new { item = "create:crushed_raw_copper" }
+      new { item = "create:crushed_raw_zinc" }
+    }
+
+    results {
+      new { item = "create:brass_ingot" }
+      new { item = "create:brass_ingot" }
+      new { item = "create:zinc_nugget" chance = 0.5 }
+      new { item = "create:copper_nugget" chance = 0.5 }
+      new { item = "create:experience_nugget" chance = 0.75 }
+    }
+  }
+
+  ["materials/alloys/from_ingot/mixing_brass"] { type = "notreepunching:empty" }
+}
+
+local function item(name: String) = new { item = name }
+local function items(name: String, count: Int) = List(item(name)).repeat(count)

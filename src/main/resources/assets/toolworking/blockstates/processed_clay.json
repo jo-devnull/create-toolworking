@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "toolworking:block/processed_clay"
+        }
+    }
+}

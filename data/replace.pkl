@@ -1,0 +1,53 @@
+local tools = List("axe", "hoe", "shovel", "pickaxe", "sword")
+
+local function getSuffix(tool: String) = new {
+  when (tool == "sword") {
+    return = "blade"
+  } else {
+    return = "head"
+  }
+}
+
+overgeared_to_ironworks {
+  from = "overgeared"
+  to = "create_ironworks"
+
+  items {
+    "steel_nugget"
+    "steel_ingot"
+    "steel_block"
+
+    for (material in List("copper", "steel")) {
+      for (tool in tools) {
+        "\(material)_\(tool)"
+      }
+
+      for (armor in List("helmet", "chestplate", "leggings", "boots")) {
+        new { "\(material)_\(armor)" "\(material)_armor_\(armor)" }
+      }
+    }
+  }
+}
+
+metallurgy_to_ironworks {
+  from = "createmetallurgy"
+  to = "create_ironworks"
+
+  items {
+    "steel_ingot"
+    "steel_block"
+  }
+}
+
+overgeared_to_toolworking {
+  from = "overgeared"
+  to = "toolworking"
+
+  items {
+    for (material in List("iron", "copper", "golden", "steel")) {
+      for (tool in tools) {
+        new { "\(material)_\(tool)_\(getSuffix(tool).return)" "\(material)_\(tool)_part" }
+      }
+    }
+  }
+}

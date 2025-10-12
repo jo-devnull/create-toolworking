@@ -1,0 +1,70 @@
+{
+    "itemGroup.toolworking.main_group": "Create: Toolworking",
+
+    "item.toolworking.processed_clay": "Argila Processada",
+    "block.toolworking.processed_clay": "Argila Processada",
+
+    "item.toolworking.wooden_axe_part": "Cabeça de Machado de Madeira",
+    "item.toolworking.wooden_hoe_part": "Cabeça de Enxada de Madeira",
+    "item.toolworking.wooden_shovel_part": "Cabeça de Pá de Madeira",
+    "item.toolworking.wooden_pickaxe_part": "Cabeça de Picareta de Madeira",
+    "item.toolworking.wooden_sword_part": "Lâmina de Espada de Madeira",
+
+    "item.toolworking.clay_ingot_mold": "Molde de Lingote",
+    "item.toolworking.clay_axe_mold": "Molde de Machado de Argila",
+    "item.toolworking.clay_hoe_mold": "Molde de Enxada de Argila",
+    "item.toolworking.clay_shovel_mold": "Molde Pá de Argila",
+    "item.toolworking.clay_pickaxe_mold": "Molde Picareta de Argila",
+    "item.toolworking.clay_sword_mold": "Molde Espada de Argila",
+    "item.toolworking.clay_hammer_mold": "Molde de Martelo de Argila",
+    "item.toolworking.clay_paxel_mold": "Molde de Paxel de Argila",
+
+    "item.toolworking.copper_axe_part": "Cabeça de Machado de Cobre",
+    "item.toolworking.iron_axe_part": "Cabeça de Machado de Ferro",
+    "item.toolworking.golden_axe_part": "Cabeça de Machado de Ouro",
+    "item.toolworking.bronze_axe_part": "Cabeça de Machado de Bronze",
+    "item.toolworking.brass_axe_part": "Cabeça de Machado de Latão",
+    "item.toolworking.steel_axe_part": "Cabeça de Machado de Aço",
+
+    "item.toolworking.copper_hoe_part": "Cabeça de Enxada de Cobre",
+    "item.toolworking.iron_hoe_part": "Cabeça de Enxada de Ferro",
+    "item.toolworking.golden_hoe_part": "Cabeça de Enxada de Ouro",
+    "item.toolworking.bronze_hoe_part": "Cabeça de Enxada de Bronze",
+    "item.toolworking.brass_hoe_part": "Cabeça de Enxada de Latão",
+    "item.toolworking.steel_hoe_part": "Cabeça de Enxada de Aço",
+
+    "item.toolworking.copper_shovel_part": "Cabeça de Pá de Cobre",
+    "item.toolworking.iron_shovel_part": "Cabeça de Pá de Ferro",
+    "item.toolworking.golden_shovel_part": "Cabeça de Pá de Ouro",
+    "item.toolworking.bronze_shovel_part": "Cabeça de Pá de Bronze",
+    "item.toolworking.brass_shovel_part": "Cabeça de Pá de Latão",
+    "item.toolworking.steel_shovel_part": "Cabeça de Pá de Aço",
+
+    "item.toolworking.copper_pickaxe_part": "Cabeça de Picareta Cobre",
+    "item.toolworking.iron_pickaxe_part": "Cabeça de Picareta Ferro",
+    "item.toolworking.golden_pickaxe_part": "Cabeça de Picareta Ouro",
+    "item.toolworking.bronze_pickaxe_part": "Cabeça de Picareta Bronze",
+    "item.toolworking.brass_pickaxe_part": "Cabeça de Picareta Latão",
+    "item.toolworking.steel_pickaxe_part": "Cabeça de Picareta Aço",
+
+    "item.toolworking.copper_sword_part": "Lâmina de Espada de Cobre",
+    "item.toolworking.iron_sword_part": "Lâmina de Espada de Ferro",
+    "item.toolworking.golden_sword_part": "Lâmina de Espada de Ouro",
+    "item.toolworking.bronze_sword_part": "Lâmina de Espada de Bronze",
+    "item.toolworking.brass_sword_part": "Lâmina de Espada de Latão",
+    "item.toolworking.steel_sword_part": "Lâmina de Espada de Aço",
+
+    "item.toolworking.copper_hammer_part": "Cabeça de Martelo de Cobre",
+    "item.toolworking.iron_hammer_part": "Cabeça de Martelo de Ferro",
+    "item.toolworking.golden_hammer_part": "Cabeça de Martelo de Ouro",
+    "item.toolworking.bronze_hammer_part": "Cabeça de Martelo de Bronze",
+    "item.toolworking.brass_hammer_part": "Cabeça de Martelo de Latão",
+    "item.toolworking.steel_hammer_part": "Cabeça de Martelo de Aço",
+
+    "item.toolworking.copper_paxel_part": "Cabeça de Paxel de Cobre",
+    "item.toolworking.iron_paxel_part": "Cabeça de Paxel de Ferro",
+    "item.toolworking.golden_paxel_part": "Cabeça de Paxel de Ouro",
+    "item.toolworking.bronze_paxel_part": "Cabeça de Paxel de Bronze",
+    "item.toolworking.brass_paxel_part": "Cabeça de Paxel de Latão",
+    "item.toolworking.steel_paxel_part": "Cabeça de Paxel de Aço"
+}

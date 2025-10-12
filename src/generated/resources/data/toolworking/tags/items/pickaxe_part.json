@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "toolworking:iron_pickaxe_part",
+    "toolworking:golden_pickaxe_part",
+    "toolworking:copper_pickaxe_part",
+    "toolworking:bronze_pickaxe_part",
+    "toolworking:brass_pickaxe_part",
+    "toolworking:steel_pickaxe_part",
+    "toolworking:wooden_pickaxe_part"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "createmetallurgy:casting_in_table",
+  "ingredients": [
+    {
+      "item": "toolworking:clay_pickaxe_mold"
+    },
+    {
+      "amount": 90,
+      "fluid": "createmetallurgy:molten_iron",
+      "nbt": {}
+    }
+  ],
+  "processingTime": 60,
+  "result": {
+    "item": "toolworking:iron_pickaxe_part"
+  }
+}

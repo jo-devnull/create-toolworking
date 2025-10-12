@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "toolworking:iron_shovel_part",
+    "toolworking:golden_shovel_part",
+    "toolworking:copper_shovel_part",
+    "toolworking:bronze_shovel_part",
+    "toolworking:brass_shovel_part",
+    "toolworking:steel_shovel_part",
+    "toolworking:wooden_shovel_part"
+  ]
+}

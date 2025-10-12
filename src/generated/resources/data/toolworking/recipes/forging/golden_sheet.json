@@ -1,0 +1,22 @@
+{
+  "type": "overgeared:forging",
+  "category": "misc",
+  "hammering": 3,
+  "has_polishing": true,
+  "has_quality": false,
+  "key": {
+    "#": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "need_quenching": true,
+  "needs_minigame": true,
+  "pattern": [
+    "#"
+  ],
+  "result": {
+    "item": "create:golden_sheet"
+  },
+  "show_notification": true,
+  "tier": "stone"
+}

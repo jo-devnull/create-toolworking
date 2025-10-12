@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "toolworking:iron_sword_part",
+    "toolworking:golden_sword_part",
+    "toolworking:copper_sword_part",
+    "toolworking:bronze_sword_part",
+    "toolworking:brass_sword_part",
+    "toolworking:steel_sword_part",
+    "toolworking:wooden_sword_part"
+  ]
+}

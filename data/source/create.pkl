@@ -1,0 +1,33 @@
+amends "./@base.pkl"
+
+local recipesToDisable = new {
+  "smelting/iron_ingot_from_crushed"
+  "blasting/iron_ingot_from_crushed"
+}
+
+recipes {
+  ["crafting/logistics/item_hatch"] {
+    type = "minecraft:crafting_shaped"
+    category =  "misc"
+
+    key {
+      o {
+        item =  "create:andesite_alloy"
+      }
+    }
+
+    pattern {
+      "o  "
+      "oo "
+      "ooo"
+    }
+
+    result {
+      item = "create:item_hatch"
+    }
+  }
+
+  for (recipeId in recipesToDisable) {
+    [recipeId] { type = "notreepunching:empty" }
+  }
+}

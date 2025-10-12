@@ -1,0 +1,23 @@
+{
+  "type": "overgeared:forging",
+  "category": "misc",
+  "hammering": 3,
+  "has_polishing": true,
+  "has_quality": true,
+  "key": {
+    "#": {
+      "item": "overgeared:heated_copper_ingot"
+    }
+  },
+  "need_quenching": true,
+  "needs_minigame": false,
+  "pattern": [
+    "###",
+    "#  "
+  ],
+  "result": {
+    "item": "toolworking:copper_paxel_part"
+  },
+  "show_notification": true,
+  "tier": "stone"
+}

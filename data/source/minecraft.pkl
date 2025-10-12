@@ -1,0 +1,18 @@
+amends "./@base.pkl"
+
+local recipesToDisable = new {
+  "iron_ingot_from_smelting_deepslate_iron_ore"
+  "iron_ingot_from_smelting_iron_ore"
+  "iron_ingot_from_smelting_raw_iron"
+  "stone_axe"
+  "stone_hoe"
+  "stone_pickaxe"
+  "stone_shovel"
+  "stone_sword"
+}
+
+recipes {
+  for (recipe in recipesToDisable) {
+    [recipe] { type = "notreepunching:empty" }
+  }
+}

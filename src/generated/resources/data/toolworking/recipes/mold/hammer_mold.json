@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "toolworking:processed_clay"
+    },
+    {
+      "tag": "toolworking:hammer_part"
+    }
+  ],
+  "result": {
+    "item": "toolworking:clay_hammer_mold"
+  }
+}

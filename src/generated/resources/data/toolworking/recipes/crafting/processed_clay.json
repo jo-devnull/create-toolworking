@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:clay"
+    },
+    {
+      "item": "minecraft:dried_kelp"
+    },
+    {
+      "tag": "minecraft:sand"
+    },
+    [
+      {
+        "item": "minecraft:water_bucket"
+      },
+      {
+        "item": "notreepunching:ceramic_water_bucket"
+      }
+    ]
+  ],
+  "result": {
+    "item": "toolworking:processed_clay"
+  }
+}

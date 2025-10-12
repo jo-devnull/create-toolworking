@@ -1,0 +1,27 @@
+amends "./@base.pkl"
+
+local recipesToDisable = new {
+  "crude_steel"
+  "stone_axe_head"
+  "stone_axe_head_2"
+  "stone_hoe_head"
+  "stone_shovel_head"
+  "stone_pickaxe_head"
+  "stone_sword_blade"
+  "steel_block"
+  "steel_ingot_from_block"
+  "steel_ingot_from_nuggets"
+  "copper_ingot_from_nuggets"
+}
+
+recipes {
+  for (recipe in recipesToDisable) {
+    [recipe] { type = "notreepunching:empty" }
+  }
+
+  for (tool in List("axe", "hoe", "shovel", "pickaxe", "sword")) {
+    for (material in List("copper", "iron", "golden", "steel")) {
+      ["\(material)_\(tool)"] { type = "notreepunching:empty" }
+    }
+  }
+}

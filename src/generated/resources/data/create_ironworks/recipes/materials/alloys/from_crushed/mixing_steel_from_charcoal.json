@@ -1,0 +1,41 @@
+{
+  "type": "create:mixing",
+  "heatRequirement": "heated",
+  "ingredients": [
+    {
+      "item": "create:crushed_raw_iron"
+    },
+    {
+      "item": "create:crushed_raw_iron"
+    },
+    {
+      "item": "create_ironworks:charcoal_dust"
+    },
+    {
+      "item": "create_ironworks:charcoal_dust"
+    },
+    {
+      "item": "create_ironworks:charcoal_dust"
+    },
+    {
+      "item": "create_ironworks:charcoal_dust"
+    }
+  ],
+  "results": [
+    {
+      "item": "overgeared:crude_steel"
+    },
+    {
+      "item": "create_ironworks:steel_nugget",
+      "count": 2
+    },
+    {
+      "item": "minecraft:iron_nugget",
+      "chance": 0.8
+    },
+    {
+      "item": "create:experience_nugget",
+      "chance": 0.95
+    }
+  ]
+}
