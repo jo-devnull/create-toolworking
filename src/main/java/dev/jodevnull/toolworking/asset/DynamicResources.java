@@ -1,15 +1,12 @@
 package dev.jodevnull.toolworking.asset;
 
 import dev.jodevnull.toolworking.Toolworking;
-import dev.jodevnull.toolworking.utils.MoldItem;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynClientResourcesGenerator;
 import net.mehvahdjukaar.moonlight.api.resources.pack.DynamicTexturePack;
 import net.mehvahdjukaar.moonlight.api.resources.pack.ResourceGenTask;
-import net.mehvahdjukaar.moonlight.api.resources.textures.TextureImage;
 import net.minecraft.server.packs.repository.Pack;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Optional;
 import java.util.function.Consumer;
 
 public class DynamicResources
