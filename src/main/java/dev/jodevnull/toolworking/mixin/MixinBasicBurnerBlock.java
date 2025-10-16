@@ -10,7 +10,7 @@ import zeh.createlowheated.content.processing.basicburner.BasicBurnerBlock;
 
 import static net.minecraft.world.level.block.HorizontalDirectionalBlock.FACING;
 
-@Mixin(value = BasicBurnerBlock.class, remap = false)
+@Mixin(value = BasicBurnerBlock.class)
 public class MixinBasicBurnerBlock
 {
     @Inject(at = @At("RETURN"), method = "getStateForPlacement", cancellable = true)
