@@ -19,6 +19,12 @@
   },
   {
     "matchItems": [
+      "overgeared:steel_plate"
+    ],
+    "resultItems": "create_ironworks:steel_sheet"
+  },
+  {
+    "matchItems": [
       "overgeared:copper_axe"
     ],
     "resultItems": "create_ironworks:copper_axe"
@@ -256,5 +262,17 @@
       "overgeared:steel_sword_blade"
     ],
     "resultItems": "toolworking:steel_sword_part"
+  },
+  {
+    "matchItems": [
+      "overgeared:copper_plate"
+    ],
+    "resultItems": "create:copper_sheet"
+  },
+  {
+    "matchItems": [
+      "overgeared:iron_plate"
+    ],
+    "resultItems": "create:iron_sheet"
   }
 ]

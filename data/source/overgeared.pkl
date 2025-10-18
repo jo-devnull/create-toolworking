@@ -12,6 +12,10 @@ local recipesToDisable = new {
   "steel_ingot_from_block"
   "steel_ingot_from_nuggets"
   "copper_ingot_from_nuggets"
+  "steel_helmet"
+  "steel_chestplate"
+  "steel_leggings"
+  "steel_boots"
 }
 
 recipes {

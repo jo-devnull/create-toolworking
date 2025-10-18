@@ -17,8 +17,16 @@ local tools = new {
   "paxel"
 }
 
+local armorParts = List("helmet", "chestplate", "leggings", "boots")
+
 local toDisable = new {
   for (material in materials) {
+    for (part in armorParts) {
+      when (material != "copper") {
+        List("compat", "\(material)_\(part)").join("/")
+      }
+    }
+
     for (tool in tools) {
       List("tools", tool, material).join("/")
       List("compat", "\(material)_\(tool)").join("/")
@@ -125,7 +133,68 @@ recipes {
   }
 
   ["materials/alloys/from_ingot/mixing_brass"] { type = "notreepunching:empty" }
+
+  for (part in armorParts) {
+    for (material in materials) {
+      ["armor/\(part)/\(material)"] = (armorRecipe) {
+        key { ["-"] = item(getSheet(material)) }
+        hammering = if (part == "helmet" || part == "boots") 3 else 5
+        pattern = ArmorPattern[part]
+        result = item("create_ironworks:\(material)_armor_\(part)")
+
+        when (material != "steel") {
+          tier = "stone"
+        }
+      }
+    }
+
+    ["armor/\(part)/sturdy"] = (armorRecipe) {
+      key { ["-"] = item("create:sturdy_sheet") }
+      hammering = 5
+      pattern = ArmorPattern[part]
+      result = item("create_ironworks:sturdy_armor_\(part)")
+    }
+  }
 }
 
 local function item(name: String) = new { item = name }
 local function items(name: String, count: Int) = List(item(name)).repeat(count)
+
+local function getSheet(material: String) =
+  if (material == "copper" || material == "brass")
+    "create:\(material)_sheet"
+  else
+    "create_ironworks:\(material)_sheet"
+
+local ArmorPattern = new {
+  ["helmet"]     = List("---", "- -")
+  ["chestplate"] = List("- -", "---", "---")
+  ["leggings"]   = List("---", "- -", "- -")
+  ["boots"]      = List("- -", "- -")
+}
+
+local armorRecipe = new {
+  type = "overgeared:forging"
+  category = "armors"
+  hammering = 3
+  has_polishing = false
+  has_quality = true
+
+  key {
+    ["-"] {
+      item = "minecraft:air"
+    }
+  }
+
+  minimum_quality = "poor"
+  need_quenching = false
+  needs_minigame = false
+  requires_blueprint = false
+  pattern {}
+
+  result {
+    item = "minecraft:air"
+  }
+
+  show_notification = true
+}
