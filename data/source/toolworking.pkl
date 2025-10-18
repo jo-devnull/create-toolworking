@@ -331,14 +331,8 @@ recipes {
 
       processingTime = 60
 
-      when (material == "iron" || material == "gold") {
-        result {
-          item = "minecraft:\(material)_ingot"
-        }
-      } else {
-        result {
-          item = "create_ironworks:\(material)_ingot"
-        }
+      result {
+        item = "\(sourceOf(material)):\(material)_ingot"
       }
     }
 
@@ -424,3 +418,11 @@ local function woodenPart(layout: List<String>, output: String) = new {
     item = "toolworking:\(output)"
   }
 }
+
+local function sourceOf(material: String) =
+  if (material == "brass")
+    "create"
+  else if (material == "steel" || material == "bronze")
+    "create_ironworks"
+  else
+    "minecraft"
