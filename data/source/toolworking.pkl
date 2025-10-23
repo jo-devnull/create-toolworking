@@ -330,26 +330,28 @@ recipes {
       }
     }
 
-    for (tool in tools) {
-      ["casting_in_table/\(name)/\(tool)"] {
-        type = "createmetallurgy:casting_in_table"
+    when (name != "tin") {
+      for (tool in tools) {
+        ["casting_in_table/\(name)/\(tool)"] {
+          type = "createmetallurgy:casting_in_table"
 
-        ingredients {
-          new { item = "toolworking:clay_\(tool)_mold" }
-          new {
-            amount = 90
-            fluid = material.molten()
-            nbt {}
+          ingredients {
+            new { item = "toolworking:clay_\(tool)_mold" }
+            new {
+              amount = 90
+              fluid = material.molten()
+              nbt {}
+            }
           }
-        }
 
-        processingTime = 60
+          processingTime = 60
 
-        result {
-          when (name == "gold") {
-            item = "toolworking:golden_\(tool)_part"
-          } else {
-            item = "toolworking:\(name)_\(tool)_part"
+          result {
+            when (name == "gold") {
+              item = "toolworking:golden_\(tool)_part"
+            } else {
+              item = "toolworking:\(name)_\(tool)_part"
+            }
           }
         }
       }
