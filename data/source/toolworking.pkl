@@ -1,35 +1,29 @@
 amends "./@base.pkl"
 
+import "../utils.pkl" as utils
+
 local tools = List("axe", "hoe", "shovel", "pickaxe", "sword", "hammer", "paxel")
-local materials = List("iron", "gold", "copper", "bronze", "brass", "steel")
 
 local basicRecipes = new {
-  ["forging/golden_sheet"] {
-    type = "overgeared:forging"
-    category = "misc"
-    hammering = 3
-    has_polishing = true
-    has_quality = false
+  for (name, material in utils.Materials) {
+    ["forging/\(name)_sheet"] {
+      type = "overgeared:forging"
+      category = "misc"
+      hammering = 3
+      has_polishing = false
+      has_quality = false
+      need_quenching = true
+      needs_minigame = true
+      show_notification = true
+      tier = "stone"
 
-    key {
-      ["#"] {
-        item = "minecraft:gold_ingot"
+      key {
+        I { item = if (material.needsHeat()) material.heated() else material.ingot  }
       }
+
+      pattern { "   " " I " "   " }
+      result { item = material.sheet }
     }
-
-    need_quenching = true
-    needs_minigame = true
-
-    pattern {
-      "#"
-    }
-
-    result {
-      item = "create:golden_sheet"
-    }
-
-    show_notification = true
-    tier = "stone"
   }
 
   ["forging/charcoal_dust"] = new {
@@ -316,15 +310,15 @@ recipes {
     }
   }
 
-  for (material in materials) {
-    ["casting_in_table/\(material)/ingot"] {
+  for (name, material in utils.Materials) {
+    ["casting_in_table/\(name)/ingot"] {
       type = "createmetallurgy:casting_in_table"
 
       ingredients {
         new { item = "toolworking:clay_ingot_mold" }
         new {
           amount = 90
-          fluid = "createmetallurgy:molten_\(material)"
+          fluid = material.molten()
           nbt {}
         }
       }
@@ -332,19 +326,19 @@ recipes {
       processingTime = 60
 
       result {
-        item = "\(sourceOf(material)):\(material)_ingot"
+        item = if (material.needsHeat() || name == "copper") material.heated() else material.ingot
       }
     }
 
     for (tool in tools) {
-      ["casting_in_table/\(material)/\(tool)"] {
+      ["casting_in_table/\(name)/\(tool)"] {
         type = "createmetallurgy:casting_in_table"
 
         ingredients {
           new { item = "toolworking:clay_\(tool)_mold" }
           new {
             amount = 90
-            fluid = "createmetallurgy:molten_\(material)"
+            fluid = material.molten()
             nbt {}
           }
         }
@@ -352,10 +346,10 @@ recipes {
         processingTime = 60
 
         result {
-          when (material == "gold") {
+          when (name == "gold") {
             item = "toolworking:golden_\(tool)_part"
           } else {
-            item = "toolworking:\(material)_\(tool)_part"
+            item = "toolworking:\(name)_\(tool)_part"
           }
         }
       }
@@ -368,7 +362,7 @@ tags {
     ["items/\(tool)_part"] {
       replace = false
       values {
-        for (material in materials) {
+        for (material in utils.Materials.keys.filter((s) -> s != "tin")) {
           when (material == "gold") {
             "toolworking:golden_\(tool)_part"
           } else {
@@ -418,11 +412,3 @@ local function woodenPart(layout: List<String>, output: String) = new {
     item = "toolworking:\(output)"
   }
 }
-
-local function sourceOf(material: String) =
-  if (material == "brass")
-    "create"
-  else if (material == "steel" || material == "bronze")
-    "create_ironworks"
-  else
-    "minecraft"

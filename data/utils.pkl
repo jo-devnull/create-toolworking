@@ -1,0 +1,55 @@
+class Material {
+  name  : String
+  ingot : String
+  sheet : String
+
+  function source() = ingot.split(":").first
+  function raw() = "\(source()):raw_\(name)"
+  function molten() = "createmetallurgy:molten_\(name)"
+  function heated() = "overgeared:heated_\(name)_ingot"
+  function needsHeat() = List("iron", "steel").contains(name)
+}
+
+const Materials = new Mapping<String, Material> {
+  ["copper"] = new Material {
+    name = "copper"
+    ingot = "minecraft:copper_ingot"
+    sheet = "create:copper_sheet"
+  }
+
+  ["iron"] = new Material {
+    name = "iron"
+    ingot = "minecraft:iron_ingot"
+    sheet = "create:iron_sheet"
+  }
+
+  ["gold"] = new Material {
+    name = "gold"
+    ingot = "minecraft:gold_ingot"
+    sheet = "create:gold_sheet"
+  }
+
+  ["brass"] = new Material {
+    name = "brass"
+    ingot = "create:brass_ingot"
+    sheet = "create:brass_sheet"
+  }
+
+  ["tin"] = new Material {
+    name = "tin"
+    ingot = "create_ironworks:tin_ingot"
+    sheet = "create_ironworks:tin_sheet"
+  }
+
+  ["bronze"] = new Material {
+    name = "bronze"
+    ingot = "create_ironworks:bronze_ingot"
+    sheet = "create_ironworks:bronze_sheet"
+  }
+
+  ["steel"] = new Material {
+    name = "steel"
+    ingot = "create_ironworks:steel_ingot"
+    sheet = "create_ironworks:steel_sheet"
+  }
+}

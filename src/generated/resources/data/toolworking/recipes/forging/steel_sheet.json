@@ -1,0 +1,24 @@
+{
+  "type": "overgeared:forging",
+  "category": "misc",
+  "hammering": 3,
+  "has_polishing": false,
+  "has_quality": false,
+  "need_quenching": true,
+  "needs_minigame": true,
+  "show_notification": true,
+  "tier": "stone",
+  "key": {
+    "I": {
+      "item": "overgeared:heated_steel_ingot"
+    }
+  },
+  "pattern": [
+    "   ",
+    " I ",
+    "   "
+  ],
+  "result": {
+    "item": "create_ironworks:steel_sheet"
+  }
+}

@@ -2,16 +2,16 @@
   "type": "createmetallurgy:casting_in_table",
   "ingredients": [
     {
-      "item": "toolworking:clay_ingot_mold"
+      "item": "toolworking:clay_paxel_mold"
     },
     {
       "amount": 90,
-      "fluid": "createmetallurgy:molten_iron",
+      "fluid": "createmetallurgy:molten_tin",
       "nbt": {}
     }
   ],
   "processingTime": 60,
   "result": {
-    "item": "overgeared:heated_iron_ingot"
+    "item": "toolworking:tin_paxel_part"
   }
 }

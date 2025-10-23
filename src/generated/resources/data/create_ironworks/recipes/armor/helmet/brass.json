@@ -1,0 +1,25 @@
+{
+  "type": "overgeared:forging",
+  "category": "armors",
+  "hammering": 3,
+  "has_polishing": false,
+  "has_quality": true,
+  "key": {
+    "-": {
+      "item": "create:brass_sheet"
+    }
+  },
+  "minimum_quality": "poor",
+  "need_quenching": false,
+  "needs_minigame": false,
+  "requires_blueprint": false,
+  "pattern": [
+    "---",
+    "- -"
+  ],
+  "result": {
+    "item": "create_ironworks:brass_armor_helmet"
+  },
+  "show_notification": true,
+  "tier": "stone"
+}

@@ -6,12 +6,12 @@
     },
     {
       "amount": 90,
-      "fluid": "createmetallurgy:molten_iron",
+      "fluid": "createmetallurgy:molten_tin",
       "nbt": {}
     }
   ],
   "processingTime": 60,
   "result": {
-    "item": "overgeared:heated_iron_ingot"
+    "item": "create_ironworks:tin_ingot"
   }
 }

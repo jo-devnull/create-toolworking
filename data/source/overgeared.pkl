@@ -16,6 +16,10 @@ local recipesToDisable = new {
   "steel_chestplate"
   "steel_leggings"
   "steel_boots"
+
+  "copper_plate"
+  "iron_plate"
+  "steel_plate"
 }
 
 recipes {

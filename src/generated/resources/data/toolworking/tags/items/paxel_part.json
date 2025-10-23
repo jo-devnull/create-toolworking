@@ -1,11 +1,11 @@
 {
   "replace": false,
   "values": [
+    "toolworking:copper_paxel_part",
     "toolworking:iron_paxel_part",
     "toolworking:golden_paxel_part",
-    "toolworking:copper_paxel_part",
-    "toolworking:bronze_paxel_part",
     "toolworking:brass_paxel_part",
+    "toolworking:bronze_paxel_part",
     "toolworking:steel_paxel_part"
   ]
 }
