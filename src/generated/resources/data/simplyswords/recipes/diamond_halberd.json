@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "overgeared:diamond_upgrade_smithing_template"
+  },
+  "base": {
+    "item": "simplyswords:iron_halberd"
+  },
+  "addition": {
+    "item": "minecraft:diamond"
+  },
+  "result": {
+    "item": "simplyswords:diamond_halberd"
+  }
+}

@@ -14,7 +14,7 @@ import java.util.List;
 public class TextureGenerator
 {
     private static final ResourceLocation
-        CLAY_MOLD = ResourceLocation.fromNamespaceAndPath("toolworking", "block/processed_clay");
+        CLAY_MOLD = ResourceLocation.fromNamespaceAndPath("createmetallurgy", "block/refractory_mortar");
 
     private static final ResourceLocation
         INGOT_MASK   = ResourceLocation.fromNamespaceAndPath("minecraft", "item/iron_ingot"),

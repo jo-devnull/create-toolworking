@@ -1,9 +1,6 @@
 {
     "itemGroup.toolworking.main_group": "Create: Toolworking",
 
-    "item.toolworking.processed_clay": "Processed Clay",
-    "block.toolworking.processed_clay": "Processed Clay",
-
     "item.toolworking.clay_ingot_mold": "Clay Ingot Mold",
     "item.toolworking.clay_axe_mold": "Clay Axe Mold",
     "item.toolworking.clay_hoe_mold": "Clay Hoe Mold",

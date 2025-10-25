@@ -7,9 +7,6 @@
       "item": "minecraft:clay"
     },
     {
-      "item": "minecraft:dried_kelp"
-    },
-    {
       "tag": "minecraft:sand"
     },
     {
@@ -20,7 +17,7 @@
   ],
   "results": [
     {
-      "item": "toolworking:processed_clay",
+      "item": "createmetallurgy:refractory_mortar",
       "count": 2
     }
   ]

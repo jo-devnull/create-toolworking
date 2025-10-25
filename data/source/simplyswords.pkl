@@ -1,0 +1,145 @@
+amends "./@base.pkl"
+
+import "../utils.pkl" as utils
+
+local const WeaponPatterns = new Mapping<String, Listing<String>> {
+  ["longsword"] {
+    "/  "
+    " = "
+    "  ="
+  }
+
+  ["twinblade"] {
+    "  ="
+    " / "
+    "=  "
+  }
+
+  ["rapier"] {
+    "  ="
+    " = "
+    "/  "
+  }
+
+  ["katana"] {
+    "   "
+    "/=="
+    "   "
+  }
+
+  ["sai"] {
+    " ="
+    "/ "
+  }
+
+  ["spear"] {
+    "  ="
+    " / "
+    "/  "
+  }
+
+  ["glaive"] {
+    "  ="
+    " /="
+    "/  "
+  }
+
+  ["warglaive"] {
+    " * "
+    "=/="
+  }
+
+  ["cutlass"] {
+    " * "
+    "== "
+    "/  "
+  }
+
+  ["claymore"] {
+    " *="
+    "*=*"
+    "/* "
+  }
+
+  ["greathammer"] {
+    "==="
+    "***"
+    " / "
+  }
+
+  ["greataxe"] {
+    "==="
+    "*/*"
+    " / "
+  }
+
+  ["chakram"] {
+    "*=*"
+    "= ="
+    "*/*"
+  }
+
+  ["scythe"] {
+    "==/"
+    "=/ "
+    "/  "
+  }
+
+  ["halberd"] {
+    " =*"
+    "=/="
+    "/  "
+  }
+}
+
+local const Materials = List(
+  utils.AllMaterials["iron"],
+  utils.AllMaterials["gold"]
+)
+
+recipes {
+  for (weapon, pat in WeaponPatterns) {
+    for (material in Materials) {
+      ["\(material.name)_\(weapon)"] {
+        type = "overgeared:forging"
+        category = "tools"
+        hammering = 1 + hammering(pat)
+        has_polishing = false
+        has_quality = true
+
+        key {
+          ["/"] { item = "minecraft:stick" }
+          ["="] { item = if (material.needsHeat()) material.heated() else material.ingot }
+
+          when (has(pat, "*")) {
+            ["*"] { item = material.nugget() }
+          }
+        }
+
+        minimum_quality = "poor"
+        need_quenching = false
+        needs_minigame = true
+        requires_blueprint = false
+        pattern = pat
+
+        result {
+          item = "simplyswords:\(material.name)_\(weapon)"
+        }
+      }
+    }
+
+    ["diamond_\(weapon)"] {
+      type = "minecraft:smithing_transform"
+      template { item = "overgeared:diamond_upgrade_smithing_template" }
+      base { item = "simplyswords:iron_\(weapon)" }
+      addition { item = "minecraft:diamond" }
+      result { item = "simplyswords:diamond_\(weapon)" }
+    }
+  }
+}
+
+local function has(pattern: Listing<String>, search: String): Boolean =
+  pattern.any((s) -> s.contains(search))
+
+local function hammering(pattern: Listing<String>): Int =
+  pattern.join("").trim().split("").map((s) -> if (s == "=") 1 else 0).reduce((a, b) -> a + b)

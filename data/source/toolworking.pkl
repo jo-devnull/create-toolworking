@@ -5,7 +5,7 @@ import "../utils.pkl" as utils
 local tools = List("axe", "hoe", "shovel", "pickaxe", "sword", "hammer", "paxel")
 
 local basicRecipes = new {
-  for (name, material in utils.Materials) {
+  for (name, material in utils.AllMaterials) {
     ["forging/\(name)_sheet"] {
       type = "overgeared:forging"
       category = "misc"
@@ -87,28 +87,36 @@ local basicRecipes = new {
     category = "misc"
 
     ingredients {
-      new { item = "minecraft:water_bucket" }
+      new {
+        new { item = "minecraft:water_bucket" }
+        new { item = "notreepunching:ceramic_water_bucket" }
+      }
+
       new { item = "minecraft:clay" }
       new { item = "minecraft:sand" }
     }
 
     result {
       item = "createmetallurgy:refractory_mortar"
+      count = 2
     }
   }
 
-  ["refractory_mortar_with_ceramic_bucket"] {
-    type = "minecraft:crafting_shapeless"
+  ["mixing/refractory_mortar"] = new {
+    type = "create:mixing"
     category = "misc"
-
+    heatRequirement = "none"
     ingredients {
-      new { item = "notreepunching:ceramic_water_bucket" }
       new { item = "minecraft:clay" }
-      new { item = "minecraft:sand" }
+      new { tag = "minecraft:sand" }
+      new { fluid = "minecraft:water" amount = 250 nbt = new {} }
     }
 
-    result {
-      item = "createmetallurgy:refractory_mortar"
+    results {
+      new {
+        item = "createmetallurgy:refractory_mortar"
+        count = 2
+      }
     }
   }
 
@@ -133,44 +141,6 @@ local basicRecipes = new {
       new {
         amount = 90
         fluid = "createmetallurgy:molten_bronze"
-      }
-    }
-  }
-
-  ["crafting/processed_clay"] = new {
-    type = "minecraft:crafting_shapeless"
-    category = "misc"
-    ingredients {
-      new { item = "minecraft:clay" }
-      new { item = "minecraft:dried_kelp" }
-      new { tag = "minecraft:sand" }
-
-      new {
-        new { item = "minecraft:water_bucket" }
-        new { item = "notreepunching:ceramic_water_bucket" }
-      }
-    }
-
-    result {
-      item = "toolworking:processed_clay"
-    }
-  }
-
-  ["mixing/processed_clay"] = new {
-    type = "create:mixing"
-    category = "misc"
-    heatRequirement = "none"
-    ingredients {
-      new { item = "minecraft:clay" }
-      new { item = "minecraft:dried_kelp" }
-      new { tag = "minecraft:sand" }
-      new { fluid = "minecraft:water" amount = 250 nbt = new {} }
-    }
-
-    results {
-      new {
-        item = "toolworking:processed_clay"
-        count = 2
       }
     }
   }
@@ -282,12 +252,20 @@ recipes {
 
   for (tool in tools) {
     ["mold/\(tool)_mold"] {
-      type = "minecraft:crafting_shapeless"
+      type = "minecraft:crafting_shaped"
       category = "misc"
 
-      ingredients {
-        new { item = "toolworking:processed_clay" }
-        new { tag = "toolworking:\(tool)_part" }
+      when (tool == "axe")     { pattern { " ==" " /=" " / " } }
+      when (tool == "hoe")     { pattern { "== " " / " " / " } }
+      when (tool == "shovel")  { pattern { " = " " / " " / " } }
+      when (tool == "pickaxe") { pattern { "===" " / " " / " } }
+      when (tool == "sword")   { pattern { " = " " = " " / " } }
+      when (tool == "hammer")  { pattern { "===" "=/=" " / " } }
+      when (tool == "paxel")   { pattern { "===" " /=" " / " } }
+
+      key {
+        ["="] { item = "createmetallurgy:refractory_mortar" }
+        ["/"] { item = "minecraft:stick" }
       }
 
       result {
@@ -297,12 +275,17 @@ recipes {
   }
 
   ["mold/ingot_mold"] {
-    type = "minecraft:crafting_shapeless"
+    type = "lychee:crafting"
     category = "misc"
 
-    ingredients {
-      new { item = "toolworking:processed_clay" }
-      new { tag = "forge:ingots" }
+    pattern {
+      "   "
+      " = "
+      "   "
+    }
+
+    key {
+      ["="] { item = "createmetallurgy:refractory_mortar" }
     }
 
     result {
@@ -310,7 +293,7 @@ recipes {
     }
   }
 
-  for (name, material in utils.Materials) {
+  for (name, material in utils.AllMaterials) {
     ["casting_in_table/\(name)/ingot"] {
       type = "createmetallurgy:casting_in_table"
 
@@ -364,7 +347,7 @@ tags {
     ["items/\(tool)_part"] {
       replace = false
       values {
-        for (material in utils.Materials.keys.filter((s) -> s != "tin")) {
+        for (material in utils.AllMaterials.keys.filter((s) -> s != "tin")) {
           when (material == "gold") {
             "toolworking:golden_\(tool)_part"
           } else {

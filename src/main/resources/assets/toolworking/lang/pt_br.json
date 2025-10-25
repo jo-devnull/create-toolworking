@@ -1,9 +1,6 @@
 {
     "itemGroup.toolworking.main_group": "Create: Toolworking",
 
-    "item.toolworking.processed_clay": "Argila Processada",
-    "block.toolworking.processed_clay": "Argila Processada",
-
     "item.toolworking.wooden_axe_part": "Cabeça de Machado de Madeira",
     "item.toolworking.wooden_hoe_part": "Cabeça de Enxada de Madeira",
     "item.toolworking.wooden_shovel_part": "Cabeça de Pá de Madeira",
@@ -13,9 +10,9 @@
     "item.toolworking.clay_ingot_mold": "Molde de Lingote",
     "item.toolworking.clay_axe_mold": "Molde de Machado de Argila",
     "item.toolworking.clay_hoe_mold": "Molde de Enxada de Argila",
-    "item.toolworking.clay_shovel_mold": "Molde Pá de Argila",
-    "item.toolworking.clay_pickaxe_mold": "Molde Picareta de Argila",
-    "item.toolworking.clay_sword_mold": "Molde Espada de Argila",
+    "item.toolworking.clay_shovel_mold": "Molde de Pá de Argila",
+    "item.toolworking.clay_pickaxe_mold": "Molde de Picareta de Argila",
+    "item.toolworking.clay_sword_mold": "Molde de Espada de Argila",
     "item.toolworking.clay_hammer_mold": "Molde de Martelo de Argila",
     "item.toolworking.clay_paxel_mold": "Molde de Paxel de Argila",
 

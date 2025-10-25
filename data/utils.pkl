@@ -5,12 +5,13 @@ class Material {
 
   function source() = ingot.split(":").first
   function raw() = "\(source()):raw_\(name)"
+  function nugget() = "\(source()):\(name)_nugget"
   function molten() = "createmetallurgy:molten_\(name)"
   function heated() = "overgeared:heated_\(name)_ingot"
   function needsHeat() = List("iron", "steel").contains(name)
 }
 
-const Materials = new Mapping<String, Material> {
+const AllMaterials = new Mapping<String, Material> {
   ["copper"] = new Material {
     name = "copper"
     ingot = "minecraft:copper_ingot"

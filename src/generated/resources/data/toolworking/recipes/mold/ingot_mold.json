@@ -1,14 +1,16 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "lychee:crafting",
   "category": "misc",
-  "ingredients": [
-    {
-      "item": "toolworking:processed_clay"
-    },
-    {
-      "tag": "forge:ingots"
-    }
+  "pattern": [
+    "   ",
+    " = ",
+    "   "
   ],
+  "key": {
+    "=": {
+      "item": "createmetallurgy:refractory_mortar"
+    }
+  },
   "result": {
     "item": "toolworking:clay_ingot_mold"
   }

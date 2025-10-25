@@ -181,7 +181,9 @@ dependencies {
     runtimeOnly fg.deobf("maven.modrinth:jupiter:ZmYt4jjp")
     runtimeOnly fg.deobf("maven.modrinth:architectury-api:9.2.14+forge")
     runtimeOnly fg.deobf("maven.modrinth:one-enough-item:TkHRus8b")
-    
+    runtimeOnly fg.deobf("maven.modrinth:cloth-config:${cloth_config_version}")
+    runtimeOnly fg.deobf("maven.modrinth:lychee:${lychee_version}")
+
     runtimeOnly fg.deobf("maven.modrinth:jei:${jei_version}")
     implementation fg.deobf("maven.modrinth:moonlight:${moonlight_version}")
 
@@ -205,6 +207,7 @@ dependencies {
     implementation fg.deobf("maven.modrinth:overgeared:${overgeared_version}")
     implementation fg.deobf("maven.modrinth:no-tree-punching:${notreepunching_version}")
     implementation fg.deobf("maven.modrinth:create-ironworks:${create_ironworks_version}")
+    implementation fg.deobf("maven.modrinth:simply-swords:${simply_swords_version}")
 }
 
 tasks.named('processResources', ProcessResources).configure {
@@ -226,6 +229,7 @@ tasks.named('processResources', ProcessResources).configure {
          metallurgy_version      : metallurgy_version,
          overgeared_version      : overgeared_version,
          create_ironworks_version: create_ironworks_version,
+         simply_swords_version   : simply_swords_version
     ]
 
     inputs.properties replaceProperties

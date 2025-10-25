@@ -5,7 +5,6 @@ import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
 import dev.jodevnull.toolworking.asset.DynamicResources;
-import dev.jodevnull.toolworking.registry.TWBlocks;
 import dev.jodevnull.toolworking.registry.TWCreativeTabs;
 import dev.jodevnull.toolworking.registry.TWItems;
 import net.createmod.catnip.lang.FontHelper;
@@ -39,7 +38,7 @@ public class Toolworking
         DynamicResources.init();
         TWCreativeTabs.register(modEventBus);
         TWItems.register();
-        TWBlocks.register();
+        // TWBlocks.register();
 
         MinecraftForge.EVENT_BUS.register(this);
     }

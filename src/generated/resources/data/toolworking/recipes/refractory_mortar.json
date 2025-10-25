@@ -2,9 +2,14 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    {
-      "item": "minecraft:water_bucket"
-    },
+    [
+      {
+        "item": "minecraft:water_bucket"
+      },
+      {
+        "item": "notreepunching:ceramic_water_bucket"
+      }
+    ],
     {
       "item": "minecraft:clay"
     },
@@ -13,6 +18,7 @@
     }
   ],
   "result": {
-    "item": "createmetallurgy:refractory_mortar"
+    "item": "createmetallurgy:refractory_mortar",
+    "count": 2
   }
 }

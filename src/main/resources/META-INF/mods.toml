@@ -70,3 +70,10 @@ mandatory = true
 versionRange = "[${create_ironworks_version},)"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "simplyswords"
+mandatory = true
+versionRange = "[${simply_swords_version},)"
+ordering = "AFTER"
+side = "BOTH"

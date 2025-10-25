@@ -1,14 +1,19 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "ingredients": [
-    {
-      "item": "toolworking:processed_clay"
-    },
-    {
-      "tag": "toolworking:shovel_part"
-    }
+  "pattern": [
+    " = ",
+    " / ",
+    " / "
   ],
+  "key": {
+    "=": {
+      "item": "createmetallurgy:refractory_mortar"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
   "result": {
     "item": "toolworking:clay_shovel_mold"
   }
