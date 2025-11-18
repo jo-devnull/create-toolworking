@@ -1,0 +1,36 @@
+abstract class Recipe {
+  type: String
+  category: String = "misc"
+  show_notification: Boolean = false
+}
+
+class RecipeOutput {
+  item: Any
+  count: Int = 1
+}
+
+class Shapeless extends Recipe {
+  type = "minecraft:crafting_shapeless"
+  ingredients: Listing<Any>
+  result: RecipeOutput
+}
+
+class Shaped extends Recipe {
+  type = "minecraft:crafting_shaped"
+  key: Dynamic | Mapping<String, Any>
+  pattern: Listing<String> | List<String>
+  result: RecipeOutput
+}
+
+class Forging extends Recipe {
+  type = "overgeared:forging"
+  hammering: Int = 3
+  has_polishing: Boolean = false
+  has_quality: Boolean = false
+  need_quenching: Boolean = false
+  needs_minigame: Boolean = false
+  tier: String
+  key: Dynamic | Mapping<String, Any>
+  pattern: List<String> | Listing<String>
+  result: RecipeOutput
+}
