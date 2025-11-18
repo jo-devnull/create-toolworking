@@ -58,13 +58,6 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
-modId = "createlowheated"
-mandatory = true
-versionRange = "[${lowheated_version},)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies."${mod_id}"]]
 modId = "create_ironworks"
 mandatory = true
 versionRange = "[${create_ironworks_version},)"

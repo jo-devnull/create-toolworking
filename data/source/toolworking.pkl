@@ -343,6 +343,21 @@ recipes {
 }
 
 tags {
+  ["items/fuel"] {
+    replace = false
+    values {
+      "#minecraft:coals"
+      "#minecraft:logs_that_burn"
+    }
+  }
+
+  ["items/fire_starter"] {
+    replace = false
+    values {
+      "minecraft:flint_and_steel"
+    }
+  }
+
   for (tool in tools) {
     ["items/\(tool)_part"] {
       replace = false

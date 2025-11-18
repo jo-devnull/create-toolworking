@@ -5,10 +5,8 @@
     "compatibilityLevel": "JAVA_8",
     "refmap": "toolworking.refmap.json",
     "mixins": [
-        "MixinBasicBurnerBlock",
-        "MixinBasicBurnerEntity",
-        "MixinBasicBurnerRenderer",
-        "MixinBellowsBlockTile"
+        "create.MixinBasinBlockEntity",
+        "supplementaries.MixinBellowsBlockTile"
     ],
     "client": [
     ],

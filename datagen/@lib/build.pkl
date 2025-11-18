@@ -1,0 +1,56 @@
+const Json: FileOutput = new {
+  value = null
+  renderer = new JsonRenderer {
+    omitNullProperties = true
+  }
+}
+
+function getModId(path: String) =
+  path.split("/")[1]
+
+function from(key: String) = key.split("->").first.trim()
+function to(key: String) = key.split("->").last.trim()
+
+function build() = new Mapping<String, FileOutput> {
+  for (name, file in import*("../**/*.pkl")) {
+    when (!name.contains("@lib")) {
+      for (key, recipe in file.getProperty("recipes")) {
+        [List("data", getModId(name), "recipes", "\(key).json").join("/")] = (Json) {
+          value = recipe
+        }
+      }
+
+      for (key, tag in file.getProperty("tags")) {
+        [List("data", getModId(name), "tags", "\(key).json").join("/")] = (Json) {
+          value = tag
+        }
+      }
+
+      for (key, repl in file.getProperty("replacements")) {
+        ["data/oei/replacements/\(getModId(name)).json"] = (Json) {
+          value {
+            for (item in repl) {
+              when (item is String) {
+                new {
+                  matchItems { "\(from(key)):\(item)" }
+                  resultItems = "\(to(key)):\(item)"
+                }
+              } else {
+                new {
+                  matchItems { "\(from(key)):\(item[0])" }
+                  resultItems = "\(to(key)):\(item[1])"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+output {
+  files {
+    ...build()
+  }
+}

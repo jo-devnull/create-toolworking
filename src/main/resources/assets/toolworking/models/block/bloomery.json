@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "insomnia:block/bloomery_front",
+		"1": "toolworking:block/bloomery_front",
 		"2": "minecraft:block/blast_furnace_top",
-		"3": "insomnia:block/bloomery_side",
+		"3": "toolworking:block/bloomery_side",
 		"4": "minecraft:block/campfire_fire",
 		"particle": "block/blast_furnace_top"
 	},

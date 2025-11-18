@@ -1,0 +1,7 @@
+import "./Recipe.pkl" as Recipe
+
+typealias ReplacementKey = String(matches(Regex(#"\w+\s*->\s*\w+"#)))
+
+tags: Mapping<String, Dynamic> = new {}
+recipes: Mapping<String, Recipe.Recipe> = new {}
+replacements: Mapping<ReplacementKey, Listing> = new {}

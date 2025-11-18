@@ -11,11 +11,11 @@
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "name": "toolworking:processed_clay"
+                    "name": "toolworking:bloomery"
                 }
             ],
             "rolls": 1.0
         }
     ],
-    "random_sequence": "toolworking:blocks/processed_clay"
+    "random_sequence": "toolworking:blocks/bloomery"
 }

@@ -1,0 +1,14 @@
+[
+  {
+    "matchItems": [
+      "createmetallurgy:steel_ingot"
+    ],
+    "resultItems": "create_ironworks:steel_ingot"
+  },
+  {
+    "matchItems": [
+      "createmetallurgy:steel_block"
+    ],
+    "resultItems": "create_ironworks:steel_block"
+  }
+]
