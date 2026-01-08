@@ -1,0 +1,10 @@
+// 1.20.1	2026-01-08T12:46:54.0157311	Registrate Provider for toolworking [Recipes, Advancements, Loot Tables, Tags (blocks), Tags (items), Tags (fluids), Tags (entity_types), Blockstates, Item models, Lang (en_us/en_ud)]
+f0907efe84533db43bffc159e83f4a9e8a5914be assets/toolworking/lang/en_ud.json
+1ffa76fddc3d2eeeae4dc9607e6ecc8d75bc3f64 assets/toolworking/lang/en_us.json
+f7eeb842f5811cd4e7af5fea831a0b17c76d8e97 assets/toolworking/models/item/heated_brass_ingot.json
+b120bdb9a4f0544eef10f5fc85ceb150cd7ac3ee assets/toolworking/models/item/heated_bronze_ingot.json
+3eb578774d62dd65b8cb107703499ca0f4efa034 assets/toolworking/models/item/heated_copper_ingot.json
+ea63825c6a953c712e32cfa1d34547e5a630330a assets/toolworking/models/item/heated_gold_ingot.json
+15e5e0e4e9d5f9d7a0c70a4dea3e4e60539873b0 assets/toolworking/models/item/heated_iron_ingot.json
+b7d10665eec510082a15e458a95e0453004e4626 assets/toolworking/models/item/heated_steel_ingot.json
+f71c19c83aca43592c19de6b3cf2939150283be7 assets/toolworking/models/item/ingot_clay_mold.json
