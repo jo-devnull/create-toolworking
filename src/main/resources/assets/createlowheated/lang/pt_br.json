@@ -1,0 +1,13 @@
+{
+  "block.createlowheated.basic_burner": "Aquecedor Metalúrgico",
+  "block.createlowheated.basic_burner.tooltip": "Aquecedor Metalúrgico",
+  "block.createlowheated.basic_burner.tooltip.behaviour1": "Clique com o botão direito nele com _Combustível_ ou use um _Funil/Deployer/Braço Mecânico_.",
+  "block.createlowheated.basic_burner.tooltip.behaviour2": "Para acender o _fogo_, use a _Pederneira e Aço_ ou _Iniciador de Fogo_. Enquanto for continuamente abastecido, o fogo permanecerá aceso.",
+  "block.createlowheated.basic_burner.tooltip.behaviour3": "Pode ser potencializado: soprar ar com uma _Fole_ aumenta a temperatura.",
+  "block.createlowheated.basic_burner.tooltip.condition1": "Requer Combustível",
+  "block.createlowheated.basic_burner.tooltip.condition2": "Requer Pederneira e Aço",
+  "block.createlowheated.basic_burner.tooltip.condition3": "Aquecedor Potencializado",
+  "block.createlowheated.basic_burner.tooltip.summary": "Fornece _calor_ para _Receitas de Bacia_ e para o _Motor a Vapor_.",
+  "create.recipe.heat_requirement.lowheated": "Temperatura Baixa",
+  "itemGroup.createlowheated.base": "Create - Low-Heated"
+}

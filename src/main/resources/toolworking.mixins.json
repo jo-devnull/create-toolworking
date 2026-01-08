@@ -1,19 +1,21 @@
 {
-    "required": true,
-    "minVersion": "0.8",
-    "package": "dev.jodevnull.toolworking.mixin",
-    "compatibilityLevel": "JAVA_8",
-    "refmap": "toolworking.refmap.json",
-    "mixins": [
-        "create.MixinBasinBlockEntity",
-        "supplementaries.MixinBellowsBlockTile"
-    ],
-    "client": [
-    ],
-    "injectors": {
-        "defaultRequire": 1
-    },
-    "overwrites": {
-        "requireAnnotations": true
-    }
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.jodevnull.toolworking.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "toolworking.refmap.json",
+  "mixins": [
+    "createlowheated.MixinBasicBurnerEntity",
+    "createlowheated.MixinBasicBurnerRenderer",
+    "notreepunching.MixinFireStarterItem",
+    "supplementaries.MixinBellowsBlockTile"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
 }

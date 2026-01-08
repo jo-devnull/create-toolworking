@@ -1,8 +1,0 @@
-amends "../@lib/model.pkl"
-
-replacements {
-  ["createmetallurgy -> create_ironworks"] {
-    "steel_ingot"
-    "steel_block"
-  }
-}

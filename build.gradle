@@ -20,19 +20,6 @@ apply plugin: 'org.spongepowered.mixin'
 group = mod_group_id
 version = mod_version
 
-tasks.register('cleanDatagenPkl', Delete) {
-    delete 'src/generated/resources/data'
-}
-
-tasks.register('datagenPkl', Exec) {
-    dependsOn {
-        cleanDatagenPkl
-    }
-
-    executable 'pkl'
-    args 'eval', '-m', 'src/generated/resources', 'data/build.pkl'
-}
-
 base {
     archivesName = mod_id
 }
@@ -183,6 +170,7 @@ dependencies {
     runtimeOnly fg.deobf("maven.modrinth:one-enough-item:TkHRus8b")
     runtimeOnly fg.deobf("maven.modrinth:cloth-config:${cloth_config_version}")
     runtimeOnly fg.deobf("maven.modrinth:lychee:${lychee_version}")
+    runtimeOnly fg.deobf("maven.modrinth:globalpacks:19.3.7")
 
     runtimeOnly fg.deobf("maven.modrinth:jei:${jei_version}")
     implementation fg.deobf("maven.modrinth:moonlight:${moonlight_version}")
@@ -201,20 +189,17 @@ dependencies {
     runtimeOnly fg.deobf("dev.engine-room.flywheel:flywheel-forge-${minecraft_version}:${flywheel_version}")
 
     implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
-    // implementation fg.deobf("maven.modrinth:create-low-heated:${lowheated_version}")
     implementation fg.deobf("maven.modrinth:create-metallurgy:${metallurgy_version}")
     implementation fg.deobf("maven.modrinth:supplementaries:${supplementaries_version}")
-    implementation fg.deobf("maven.modrinth:overgeared:${overgeared_version}")
     implementation fg.deobf("maven.modrinth:no-tree-punching:${notreepunching_version}")
     implementation fg.deobf("maven.modrinth:create-ironworks:${create_ironworks_version}")
-    implementation fg.deobf("maven.modrinth:simply-swords:${simply_swords_version}")
+    implementation fg.deobf("maven.modrinth:create-low-heated:${lowheated_version}")
+
+    // implementation fg.deobf("maven.modrinth:overgeared:${overgeared_version}")
+    // implementation fg.deobf("maven.modrinth:simply-swords:${simply_swords_version}")
 }
 
 tasks.named('processResources', ProcessResources).configure {
-    dependsOn {
-        datagenPkl
-    }
-
     var replaceProperties = [
          minecraft_version       : minecraft_version, minecraft_version_range: minecraft_version_range,
          forge_version           : forge_version, forge_version_range: forge_version_range,
@@ -227,9 +212,7 @@ tasks.named('processResources', ProcessResources).configure {
          supplementaries_version : supplementaries_version,
          lowheated_version       : lowheated_version,
          metallurgy_version      : metallurgy_version,
-         overgeared_version      : overgeared_version,
          create_ironworks_version: create_ironworks_version,
-         simply_swords_version   : simply_swords_version
     ]
 
     inputs.properties replaceProperties

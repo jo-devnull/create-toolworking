@@ -26,20 +26,13 @@ side = "BOTH"
 modId = "supplementaries"
 mandatory = true
 versionRange = "[${supplementaries_version},)"
-ordering = "NONE"
+ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
 modId = "create"
 mandatory = true
 versionRange = "[6.0.6,)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies."${mod_id}"]]
-modId = "overgeared"
-mandatory = true
-versionRange = "[${overgeared_version},)"
 ordering = "AFTER"
 side = "BOTH"
 
@@ -58,15 +51,8 @@ ordering = "AFTER"
 side = "BOTH"
 
 [[dependencies."${mod_id}"]]
-modId = "create_ironworks"
+modId = "createlowheated"
 mandatory = true
-versionRange = "[${create_ironworks_version},)"
-ordering = "AFTER"
-side = "BOTH"
-
-[[dependencies."${mod_id}"]]
-modId = "simplyswords"
-mandatory = true
-versionRange = "[${simply_swords_version},)"
+versionRange = "[${lowheated_version},)"
 ordering = "AFTER"
 side = "BOTH"

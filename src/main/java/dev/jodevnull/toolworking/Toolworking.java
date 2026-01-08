@@ -4,9 +4,6 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.simibubi.create.foundation.item.ItemDescription;
 import com.simibubi.create.foundation.item.KineticStats;
 import com.simibubi.create.foundation.item.TooltipModifier;
-import dev.jodevnull.toolworking.asset.DynamicResources;
-import dev.jodevnull.toolworking.registry.TWBlockEntityTypes;
-import dev.jodevnull.toolworking.registry.TWBlocks;
 import dev.jodevnull.toolworking.registry.TWCreativeTabs;
 import dev.jodevnull.toolworking.registry.TWItems;
 import net.createmod.catnip.lang.FontHelper;
@@ -22,7 +19,7 @@ import org.apache.logging.log4j.Logger;
 public class Toolworking
 {
     public static final String MODID = "toolworking";
-    public static final Logger logger = LogManager.getLogger("Toolworking");
+    public static final Logger LOGGER = LogManager.getLogger("Toolworking");
     public static final CreateRegistrate REGISTRATE = CreateRegistrate.create(MODID);
 
     public static ResourceLocation res(String path) { return ResourceLocation.fromNamespaceAndPath(MODID, path); }
@@ -37,12 +34,8 @@ public class Toolworking
         IEventBus modEventBus = context.getModEventBus();
         REGISTRATE.registerEventListeners(modEventBus);
 
-        DynamicResources.init();
         TWCreativeTabs.register(modEventBus);
         TWItems.register();
-        TWBlocks.register();
-        TWBlockEntityTypes.register();
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 }
