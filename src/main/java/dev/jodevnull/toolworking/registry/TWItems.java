@@ -15,12 +15,18 @@ public class TWItems
         INGOT_CLAY_MOLD = REGISTRATE.item("ingot_clay_mold", Item::new).defaultModel().register();
 
     public static final ItemEntry<Item>
-        HEATED_COPPER_INGOT = REGISTRATE.item("heated_copper_ingot", Item::new).defaultModel().register(),
-        HEATED_BRONZE_INGOT = REGISTRATE.item("heated_bronze_ingot", Item::new).defaultModel().register(),
-        HEATED_BRASS_INGOT  = REGISTRATE.item("heated_brass_ingot",  Item::new).defaultModel().register(),
-        HEATED_GOLD_INGOT   = REGISTRATE.item("heated_gold_ingot",   Item::new).defaultModel().register(),
-        HEATED_IRON_INGOT   = REGISTRATE.item("heated_iron_ingot",   Item::new).defaultModel().register(),
-        HEATED_STEEL_INGOT  = REGISTRATE.item("heated_steel_ingot",  Item::new).defaultModel().register();
+        HEATED_COPPER_INGOT = simpleItem("heated_copper_ingot"),
+        HEATED_BRONZE_INGOT = simpleItem("heated_bronze_ingot"),
+        HEATED_BRASS_INGOT  = simpleItem("heated_brass_ingot"),
+        HEATED_GOLD_INGOT   = simpleItem("heated_gold_ingot"),
+        HEATED_IRON_INGOT   = simpleItem("heated_iron_ingot"),
+        HEATED_STEEL_INGOT  = simpleItem("heated_steel_ingot");
 
     public static void register() {}
+
+    public static ItemEntry<Item> simpleItem(String name) {
+        return REGISTRATE.item(name, Item::new)
+            .defaultModel()
+            .register();
+    }
 }
