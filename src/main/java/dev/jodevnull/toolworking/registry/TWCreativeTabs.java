@@ -31,7 +31,7 @@ public class TWCreativeTabs
     public static final RegistryObject<CreativeModeTab> MAIN_CREATIVE_TAB = REGISTER.register("main_group",
         () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup." + Toolworking.MODID + ".main_group"))
-            .icon(TWItems.HEATED_IRON_INGOT::asStack)
+            .icon(TWItems.INGOT_CLAY_MOLD::asStack)
             .displayItems(new RegistrateDisplayItemsGenerator())
             .build()
         );

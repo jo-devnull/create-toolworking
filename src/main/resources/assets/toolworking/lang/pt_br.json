@@ -6,5 +6,7 @@
   "item.toolworking.heated_gold_ingot": "Lingote de Ouro Quente",
   "item.toolworking.heated_iron_ingot": "Lingote de Ferro Quente",
   "item.toolworking.heated_steel_ingot": "Lingote de Aço Quente",
-  "item.toolworking.ingot_clay_mold": "Molde de Lingote"
+  "item.toolworking.ingot_clay_mold": "Molde de Lingote",
+  "item.toolworking.molten_glass_bucket": "Balde de Vidro Derretido",
+  "fluid.toolworking.molten_glass": "Vidro Derretido"
 }

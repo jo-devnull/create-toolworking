@@ -6,5 +6,7 @@
     "item.toolworking.heated_gold_ingot": "Heated Gold Ingot",
     "item.toolworking.heated_iron_ingot": "Heated Iron Ingot",
     "item.toolworking.heated_steel_ingot": "Heated Steel Ingot",
-    "item.toolworking.ingot_clay_mold": "Ingot Clay Mold"
+    "item.toolworking.ingot_clay_mold": "Ingot Clay Mold",
+    "item.toolworking.molten_glass_bucket": "Molten Glass Bucket",
+    "fluid.toolworking.molten_glass": "Molten Glass"
 }
