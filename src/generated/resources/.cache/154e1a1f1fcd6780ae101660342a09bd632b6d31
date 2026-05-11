@@ -1,0 +1,7 @@
+// 1.21.1	2026-05-11T12:37:57.100458	Registrate Provider for toolworking [Registries, Data Maps, Recipes, Advancements, Loot Tables, Tags (blocks), Tags (enchantments), Tags (items), Tags (fluids), Tags (entity_types), generic_server_provider, Blockstates, Item models, Lang (en_us/en_ud), generic_client_provider]
+145a657eb1aadb8a2d1d0b47e3a92e14bc5c6b27 assets/toolworking/blockstates/molten_glass.json
+e69ba4b3181e1743ce11d276babb04196028b852 assets/toolworking/lang/en_ud.json
+0630e7ee0b793fc7a8a6822e803bf80d04dccaed assets/toolworking/lang/en_us.json
+2b26f38dc42d8f6c66411d94beb60148411f90f2 assets/toolworking/models/block/molten_glass.json
+f71c19c83aca43592c19de6b3cf2939150283be7 assets/toolworking/models/item/ingot_clay_mold.json
+78af8941049688a5d39acd8e2412d8b753713b12 assets/toolworking/models/item/molten_glass_bucket.json
