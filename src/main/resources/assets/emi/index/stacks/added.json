@@ -1,8 +1,0 @@
-{
-  "added": [
-    {
-      "stack": "item:notreepunching:clay_bucket",
-      "after": "item:notreepunching:clay_brick"
-    }
-  ]
-}
